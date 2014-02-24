@@ -30,8 +30,8 @@ persistent::paths:
     postgresdata: {}
 
 # Backups
-amanda::remote_user "backup"
-amanda::server "walesnix.earthsci.unimelb.edu.au"
+amanda::remote_user: "backup"
+amanda::server: "walesnix.earthsci.unimelb.edu.au"
 
 # Proxy setup
 nginx::use_default_location: false
