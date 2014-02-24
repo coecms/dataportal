@@ -43,3 +43,6 @@
 [submodule "modules/amanda"]
 	path = modules/amanda
 	url = https://github.com/pdxcat/puppet-module-amanda
+[submodule "modules/xinetd"]
+	path = modules/xinetd
+	url = https://github.com/puppetlabs/puppetlabs-xinetd
