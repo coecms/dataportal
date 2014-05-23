@@ -3,6 +3,7 @@
 classes:
     - jenkins
     - nginx
+    - vagrant
 packages:
     - git
 ruby-packages:
@@ -31,12 +32,7 @@ persistent::paths:
 
 proxy:
     '/jenkins':
-        proxy: 'http://localhost:%{hiera("jenkins::http_port")}/jenkins'
+        proxy: 'http://localhost:%{hiera("jenkins::http_port")}'
         vhost: '%{::fqdn} ssl'
         ssl: true
         ssl_only: true
-        location_cfg_append:
-            proxy_set_header Host: '$host'
-            proxy_set_header X-Real-IP: '$remote_addr'
-            proxy_set_header X-Forwarded-For: '$proxy_add_x_forwarded_for'
-            proxy_redirect: 'http:// https://'
