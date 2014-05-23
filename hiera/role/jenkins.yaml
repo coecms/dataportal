@@ -1,9 +1,8 @@
 # Jenkins build server
 ---
 classes:
-    - jenkins
+    - roles::jenkins
     - nginx
-    - vagrant
 packages:
     - git
 ruby-packages:

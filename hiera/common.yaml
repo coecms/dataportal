@@ -1,6 +1,7 @@
 # Common stuff
 ---
 classes:
+    - roles::common
     - security
     - ec2user
     - sudo
