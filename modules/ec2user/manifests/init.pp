@@ -17,6 +17,9 @@
 #  limitations under the License.
 
 class ec2user {
+  $ec2key_array = split($::ec2_public_keys_0_openssh_key,' ')
+  $ec2key = $ec2key_array[1]
+
   # Create a default user
   user {'ec2-user':
     ensure     => present,
@@ -28,7 +31,7 @@ class ec2user {
   } ->
   ssh_authorized_key {'ec2 public key':
     ensure => present,
-    key    => $::ec2_public_keys_0_openssh_key,
+    key    => $ec2key,
     user   => 'ec2-user',
   }
 
