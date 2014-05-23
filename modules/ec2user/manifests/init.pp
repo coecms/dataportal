@@ -26,9 +26,10 @@ class ec2user {
   file {'/home/ec2-user/.ssh':
     ensure => directory,
   } ->
-  file {'/home/ec2-user/.ssh/authorized_keys':
-    ensure  => present,
-    content => $::ec2_public_keys_0_openssh_key,
+  ssh_authorized_key {'ec2 public key':
+    ensure => present,
+    key    => $::ec2_public_keys_0_openssh_key,
+    user   => 'ec2-user',
   }
 
   sudo::conf {'ec2-user':
