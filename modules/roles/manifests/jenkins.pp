@@ -20,7 +20,7 @@ class roles::jenkins {
   # Inherit generic webservice
   include roles::webservice
 
-  include jenkins
+  include ::jenkins
 
   # Use vagrant to test Puppet modules
   include vagrant
