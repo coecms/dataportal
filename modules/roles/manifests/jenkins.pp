@@ -25,7 +25,7 @@ class roles::jenkins {
   # Use vagrant to test Puppet modules
   include vagrant
   package {'nokogiri':
-    name  => 'rubygems-nokogiri',
+    name  => 'rubygem-nokogiri',
     alias => 'nokogiri',
   } ->
   vagrant::plugin {'vagrant-openstack':}
