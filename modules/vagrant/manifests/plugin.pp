@@ -17,7 +17,7 @@
 
 define vagrant::plugin {
 
-  command {"vagrant plugin install ${name}":
+  exec {"vagrant plugin install ${name}":
     path   => ['/bin','/usr/bin'],
     unless => "vagrant plugin list | grep '^${name}'",
   }
