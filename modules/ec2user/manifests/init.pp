@@ -19,6 +19,7 @@
 class ec2user {
   $ec2key_array = split($::ec2_public_keys_0_openssh_key,' ')
   $ec2key = $ec2key_array[1]
+  $keytype = $ec2key_array[0]
 
   # Create a default user
   user {'ec2-user':
@@ -32,6 +33,7 @@ class ec2user {
   ssh_authorized_key {'ec2 public key':
     ensure => present,
     key    => $ec2key,
+    type   => $keytype,
     user   => 'ec2-user',
   }
 
