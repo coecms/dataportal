@@ -1,37 +1,37 @@
 # Jenkins build server
 ---
 classes:
-    - roles::jenkins
+#    - roles::jenkins
     - nginx
 packages:
     - git
 ruby-packages:
     - puppet-lint
 
-jenkins::install_java: false
-jenkins::configure_firewall: false
-jenkins::http_port: '8088'
-
-jenkins::config_hash:
-    JENKINS_HOME:
-        value: '%{hiera("persistent::dir")}/jenkins'
-    JENKINS_PORT:
-        value: '%{hiera("jenkins::http_port")}'
-    JENKINS_AJP_PORT:
-        value: '-1'
-    JENKINS_ARGS:
-        value: '--prefix=/jenkins'
-
-persistent::paths:
-    jenkins:
-        create: true
-        owner: 'jenkins'
-        require: Package[jenkins]
-        notify: Service[jenkins]
+#jenkins::install_java: false
+#jenkins::configure_firewall: false
+#jenkins::http_port: '8088'
+#
+#jenkins::config_hash:
+#    JENKINS_HOME:
+#        value: '%{hiera("persistent::dir")}/jenkins'
+#    JENKINS_PORT:
+#        value: '%{hiera("jenkins::http_port")}'
+#    JENKINS_AJP_PORT:
+#        value: '-1'
+#    JENKINS_ARGS:
+#        value: '--prefix=/jenkins'
+#
+#persistent::paths:
+#    jenkins:
+#        create: true
+#        owner: 'jenkins'
+#        require: Package[jenkins]
+#        notify: Service[jenkins]
 
 proxy:
     '/jenkins':
-        proxy: 'http://localhost:%{hiera("jenkins::http_port")}'
+        proxy: 'http://130.56.244.115:8080/jenkins'
         vhost: '%{::fqdn} ssl'
         ssl: true
         ssl_only: true
