@@ -6,4 +6,5 @@
     - role/ramadda
     - role/jenkins
     - site/%{::openstack_meta_site}
+    - admins
     - common

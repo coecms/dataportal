@@ -1,4 +1,4 @@
-## \file    modules/roles/manifests/common.pp
+## \file    modules/roles/manifests/admin.pp
 #  \author  Scott Wales <scott.wales@unimelb.edu.au>
 #
 #  Copyright 2014 ARC Centre of Excellence for Climate Systems Science
@@ -15,16 +15,30 @@
 #  See the License for the specific language governing permissions and
 #  limitations under the License.
 
-# Common stuff for all servers
-class roles::common {
+# Admin user
+define roles::admin (
+  $home   = "/home/${name}",
+  $pubkey = undef,
+) {
 
-  # Setup hostname
-  host {$::fqdn:
-    ip           => $::ec2_public_ipv4,
-    host_aliases => $::hostname,
+  user {$name:
+    home       => $home,
+    managehome => true,
   }
 
-  # Set up admin users
-  $admins = hiera_hash('admins',{})
-  create_resources('roles::admin',$admins)
+  if $pubkey {
+    # Split up the pubkey for use by Puppet
+    $components = split($pubkey, ' ')
+
+    $type    = $components[0]
+    $key     = $components[1]
+    $comment = regsubst($pubkey,'^\S+\s+\S+\s+(.*)$','\1')
+
+    ssh_authorized_key{"${name} ${comment}":
+      key  => $key,
+      type => $type,
+      user => $name,
+    }
+  }
+
 }
