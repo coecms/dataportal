@@ -17,16 +17,23 @@
 #  limitations under the License.
 
 # Mount a /g/data1 project
-define nci::gdata {
+define nci::gdata (
+  $gid = undef,
+) {
   $mountpoint = "/g/data1/${title}"
 
   file {$mountpoint:
     ensure => directory,
   }
 
+  group {$name:
+    ensure => present,
+    gid    => $gid,
+  }
+
   mount {$mountpoint:
     ensure  => mounted,
-    device  => "nnfs3.nci.org.au:/mnt/gdata1/${title}",
+    device  => "nnfs2.nci.org.au:/mnt/gdata1/${title}",
     fstype  => 'nfs',
     options => 'ro,nolock',
     require => [Package['nfs-utils'],File[$mountpoint]],

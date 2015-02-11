@@ -35,10 +35,8 @@ node default {
 
   if $::openstack_meta_site == 'NCI' {
     # NFS mounts
-    $gdata_mounts = hiera_array('gdata-mounts',[])
-    if size($gdata_mounts) > 0 {
-      nci::gdata {$gdata_mounts:}
-    }
+    $gdata_mounts = hiera_hash('gdata-mounts',{})
+    create_resources('nci::gdata', $gdata_mounts)
   }
 
   $proxies = hiera_hash('proxy',{})

@@ -18,8 +18,10 @@ ramadda::postgres_password: 'TODO: change me'
 
 # Data to be mounted
 gdata-mounts:
-    - ua8
-    - v45
+    ua8:
+        gid: 5972
+    v45:
+        gid: 5636
 
 persistent::paths:
     ramadda: {}
