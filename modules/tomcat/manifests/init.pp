@@ -32,8 +32,8 @@ class tomcat (
     gid     => 'ua8',
     uid     => '5424',
     system  => true,
-    groups  => 'tomcat',
-    require => Group['ua8','tomcat'],
+    groups  => ['tomcat','v45'],
+    require => Group['ua8','v45','tomcat'],
     before  => Package['tomcat'],
   }
 
