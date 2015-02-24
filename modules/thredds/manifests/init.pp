@@ -32,4 +32,21 @@ class thredds {
   file {"${webapps}/thredds.war":
     require => Exec['wget thredds.war'],
   }
+
+  file {'/var/thredds':
+    ensure => directory,
+    owner  => 'tomcat',
+    group  => 'tomcat',
+  }
+
+  file {"${catalina_base}/content":
+    ensure => directory,
+  }
+
+  file {"${catalina_base}/content/thredds":
+    ensure  => link,
+    target  => '/var/thredds',
+    require => File['/var/thredds'],
+    notify  => Service['tomcat'],
+  }
 }
