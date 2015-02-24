@@ -39,14 +39,19 @@ class thredds {
     group  => 'tomcat',
   }
 
-  file {"${catalina_base}/content":
+  $content_dir = '/var/thredds'
+  file {[$content_dir,"${content_dir}/thredds"]:
     ensure => directory,
+    owner  => 'tomcat',
+    group  => 'tomcat',
   }
 
-  file {"${catalina_base}/content/thredds":
-    ensure  => link,
-    target  => '/var/thredds',
-    require => File['/var/thredds'],
-    notify  => Service['tomcat'],
+  file {"${content_dir}/thredds/threddsConfig.xml":
+    ensure => file,
+    source => 'puppet:///modules/thredds/threddsConfig.xml',
+  }
+  file {"${content_dir}/thredds/catalog.xml":
+    ensure => file,
+    source => 'puppet:///modules/thredds/catalog.xml',
   }
 }
