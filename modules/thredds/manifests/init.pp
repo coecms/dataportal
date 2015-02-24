@@ -16,7 +16,7 @@
 #  limitations under the License.
 
 class thredds {
-  $catalina_base = '/usr/share/tomcat6'
+  $catalina_base = '/var/lib/tomcat6'
   $webapps       = "${catalina_base}/webapps"
 
   $source = 'ftp://ftp.unidata.ucar.edu/pub/thredds/4.3/current/thredds.war'
