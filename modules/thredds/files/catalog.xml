@@ -32,6 +32,20 @@
     </filter>
 
   </datasetScan>
+  
+ <datasetScan name="arccss-data" ID="arccssdata" path="ARCCSS_Data", location="/g/data1/ua8/ARCCSS_data/">
+     <metadata inherited="true">
+        <serviceName>all</serviceName>
+        <authority>ARCCSS</authority>
+        <dataType>GRID</dataType>
+     </metadata>
+     <filter>
+        <include wildcard="*.nc" />
+        <include wildcard="*.grib1" />
+        <include wildcard="*.grib2" />
+     </filter>
+</datasetScan>
+
 
   <catalogRef xlink:title="Test Enhanced Catalog" xlink:href="enhancedCatalog.xml" name=""/>
 
