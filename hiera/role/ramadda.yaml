@@ -5,6 +5,7 @@ classes:
     - ramadda
     - ramadda::ldap
     - postgresql::server
+    - thredds
 
 # Ramadda parameters
 ramadda::ldap::url: '%{hiera("ldap::url")}'
