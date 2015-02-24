@@ -45,7 +45,7 @@ nginx::nginx_vhosts:
         server_name:
             - '%{::fqdn}'
         location_custom_cfg:
-            return: '301 https://$host/repository'
+            return: '302 https://$host/repository'
         listen_options: 'default'
         listen_port: 443
         ssl: true
