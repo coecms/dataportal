@@ -156,13 +156,13 @@
   <!--
   The WCS Service is off by default.
   Also, off by default (and encouraged) is operating on a remote dataset.
+  -->
   <WCS>
-    <allow>false</allow>
+    <allow>true</allow>
     <allowRemote>false</allowRemote>
     <scour>15 min</scour>
     <maxAge>30 min</maxAge>
   </WCS>
-  -->
 
   <WMS>
     <allow>true</allow>
@@ -171,13 +171,11 @@
     <maxImageHeight>2048</maxImageHeight>
   </WMS>
 
-  <!--
   <NCISO>
-    <ncmlAllow>false</ncmlAllow>
-    <uddcAllow>false</uddcAllow>
-    <isoAllow>false</isoAllow>
+    <ncmlAllow>true</ncmlAllow>
+    <uddcAllow>true</uddcAllow>
+    <isoAllow>true</isoAllow>
   </NCISO>
-  -->
 
   <!-- CatalogGen service is off by default.
   <CatalogGen>
