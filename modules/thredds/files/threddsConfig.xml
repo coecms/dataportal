@@ -164,14 +164,12 @@
   </WCS>
   -->
 
-  <!--
   <WMS>
-    <allow>false</allow>
+    <allow>true</allow>
     <allowRemote>false</allowRemote>
     <maxImageWidth>2048</maxImageWidth>
     <maxImageHeight>2048</maxImageHeight>
   </WMS>
-  -->
 
   <!--
   <NCISO>
