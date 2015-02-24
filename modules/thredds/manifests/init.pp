@@ -43,9 +43,11 @@ class thredds {
   file {"${content_dir}/thredds/threddsConfig.xml":
     ensure => file,
     source => 'puppet:///modules/thredds/threddsConfig.xml',
+    notify => Service['tomcat'],
   }
   file {"${content_dir}/thredds/catalog.xml":
     ensure => file,
     source => 'puppet:///modules/thredds/catalog.xml',
+    notify => Service['tomcat'],
   }
 }
