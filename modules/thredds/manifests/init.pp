@@ -33,12 +33,6 @@ class thredds {
     require => Exec['wget thredds.war'],
   }
 
-  file {'/var/thredds':
-    ensure => directory,
-    owner  => 'tomcat',
-    group  => 'tomcat',
-  }
-
   $content_dir = '/var/thredds'
   file {[$content_dir,"${content_dir}/thredds"]:
     ensure => directory,
