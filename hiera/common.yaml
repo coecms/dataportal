@@ -2,7 +2,6 @@
 ---
 classes:
     - site
-    - roles::common
     - security
     - ec2user
     - sudo
