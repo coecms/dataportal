@@ -3,7 +3,6 @@
 classes:
     - site
     - security
-    - ec2user
     - sudo
     - persistent
     - amanda::client
