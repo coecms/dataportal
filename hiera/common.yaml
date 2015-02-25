@@ -1,14 +1,18 @@
 # Common stuff
 ---
 classes:
-    - roles::common
+    - site
     - security
-    - ec2user
     - sudo
     - persistent
     - amanda::client
 packages:
     - wget
+
+# Basic configuration
+site::hostname: 'climate-cms'
+site::domain:   'nci.org.au'
+site::secure:    false
 
 # Bare-bones apache settings
 apache::default_vhost: false

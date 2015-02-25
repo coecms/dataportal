@@ -1,4 +1,5 @@
-## \file    modules/roles/manifests/common.pp
+#!/bin/bash
+## \file    modules/site/files/provision.sh
 #  \author  Scott Wales <scott.wales@unimelb.edu.au>
 #
 #  Copyright 2014 ARC Centre of Excellence for Climate Systems Science
@@ -15,16 +16,10 @@
 #  See the License for the specific language governing permissions and
 #  limitations under the License.
 
-# Common stuff for all servers
-class roles::common {
+set -eu
 
-  # Setup hostname
-  host {$::fqdn:
-    ip           => $::ec2_public_ipv4,
-    host_aliases => $::hostname,
-  }
-
-  # Set up admin users
-  $admins = hiera_hash('admins',{})
-  create_resources('roles::admin',$admins)
-}
+export HOME=/home/ec2-user
+cd /etc/puppet
+git pull
+git submodule update --init
+puppet apply --detailed-exitcodes manifests/site.pp

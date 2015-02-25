@@ -34,25 +34,16 @@ class thredds {
   }
 
   $content_dir = '/var/thredds'
-  file {[$content_dir,"${content_dir}/thredds"]:
+  file {$content_dir:
     ensure => directory,
-    owner  => 'tomcat',
-    group  => 'tomcat',
   }
 
-  file {"${content_dir}/thredds/threddsConfig.xml":
-    ensure => file,
-    source => 'puppet:///modules/thredds/threddsConfig.xml',
-    notify => Service['tomcat'],
-  }
-  file {"${content_dir}/thredds/catalog.xml":
-    ensure => file,
-    source => 'puppet:///modules/thredds/catalog.xml',
-    notify => Service['tomcat'],
-  }
-  file {"${content_dir}/thredds/wmsConfig.xml":
-    ensure => file,
-    source => 'puppet:///modules/thredds/wmsConfig.xml',
-    notify => Service['tomcat'],
+  file {"${content_dir}/thredds/":
+    ensure  => directory,
+    source  => 'puppet:///modules/thredds/config',
+    recurse => true,
+    owner   => 'tomcat',
+    group   => 'tomcat',
+    notify  => Service['tomcat'],
   }
 }

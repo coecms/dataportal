@@ -8,6 +8,14 @@ minor changes to the directory structure.
 It installs Ramadda as a Tomcat webapp, then sets up Apache to serve the webapp
 on port 80.
 
+Updating the VM
+---------------
+
+The Puppet configuration will be automatically updated on the server once every
+24 hours. It can also be manually updated by an admin by running
+
+    sudo /usr/sbin/provision
+
 Starting the VM
 ---------------
 
