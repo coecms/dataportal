@@ -60,12 +60,6 @@ class site (
   }
 
   # Updates
-  cron { 'yum update':
-    command => '/usr/bin/yum update --assumeyes',
-    user    => 'root',
-    hour    => 1,
-    minute  => 0,
-  }
   cron { 'puppet update':
     command => '/usr/sbin/provision',
     user    => 'root',
