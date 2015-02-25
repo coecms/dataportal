@@ -4,7 +4,6 @@
         xmlns:xlink="http://www.w3.org/1999/xlink">
   <service name="all" base="" serviceType="compound">
     <service name="odap" serviceType="OpenDAP" base="/thredds/dodsC/" />
-    <service name="http" serviceType="HTTPServer" base="/thredds/fileServer/" />
     <service name="wcs" serviceType="WCS" base="/thredds/wcs/" />
     <service name="wms" serviceType="WMS" base="/thredds/wms/" />
     <service name="ncml" serviceType="NCML" base="/thredds/ncml/" />

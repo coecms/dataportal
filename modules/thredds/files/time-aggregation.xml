@@ -4,7 +4,6 @@
                 xmlns:xlink="http://www.w3.org/1999/xlink">
   <service name="all" base="" serviceType="compound">
     <service name="odap" serviceType="OpenDAP" base="/thredds/dodsC/" />
-    <service name="http" serviceType="HTTPServer" base="/thredds/fileServer/" />
     <service name="wcs" serviceType="WCS" base="/thredds/wcs/" />
     <service name="wms" serviceType="WMS" base="/thredds/wms/" />
     <service name="ncml" serviceType="NCML" base="/thredds/ncml/" />
@@ -19,7 +18,7 @@
      </metadata>
      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
      <aggregation dimName="time" type="joinExisting">
-         <scan location="/g/data1/ua8/ARCCSS_Data/WRF_Sydney2k/"
+         <scan location="/g/data1/ua8/ARCCSS_Data/WRF_Sydney2k/HeatIndexVars_dailymax_*"
                dateFormatMark="HeatIndexVars_dailymax_WRFMK3_5_FutureOEHLu_#yyyy" 
                suffix=".nc" subdirs="false"/>
        </aggregation>
