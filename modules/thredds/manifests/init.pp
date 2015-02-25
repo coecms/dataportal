@@ -34,15 +34,16 @@ class thredds {
   }
 
   $content_dir = '/var/thredds'
-  file {[$content_dir,"${content_dir}/thredds"]:
+  file {$content_dir:
     ensure => directory,
-    owner  => 'tomcat',
-    group  => 'tomcat',
   }
 
   file {"${content_dir}/thredds/":
+    ensure  => directory,
     source  => 'puppet:///modules/thredds/config',
     recurse => true,
+    owner   => 'tomcat',
+    group   => 'tomcat',
     notify  => Service['tomcat'],
   }
 }
