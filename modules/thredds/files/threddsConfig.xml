@@ -138,12 +138,12 @@
 
   <!--
   The Netcdf Subset Service is off by default.
+  -->
   <NetcdfSubsetService>
-    <allow>false</allow>
+    <allow>true</allow>
     <scour>10 min</scour>
     <maxAge>-1 min</maxAge>
   </NetcdfSubsetService>
-  -->
 
   <!--
   <Opendap>

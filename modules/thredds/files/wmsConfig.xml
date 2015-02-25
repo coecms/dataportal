@@ -25,6 +25,9 @@ for more information.
         <standardNames>
             <!-- Use this section to set defaults per standard name -->
             <!-- Units must come from the UDUNITS vocabulary -->
+            <standardName name="air_temperature_*" units="K">
+                <defaultColorScaleRange>200 350</defaultColorScaleRange>
+            </standardName>
             <standardName name="sea_water_potential_temperature" units="K">
                 <defaultColorScaleRange>268 308</defaultColorScaleRange>
             </standardName>
