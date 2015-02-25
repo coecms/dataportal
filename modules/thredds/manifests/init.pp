@@ -55,4 +55,14 @@ class thredds {
     source => 'puppet:///modules/thredds/wmsConfig.xml',
     notify => Service['tomcat'],
   }
+  file {"${content_dir}/thredds/var-aggregation.xml":
+    ensure => file,
+    source => 'puppet:///modules/thredds/var-aggregation.xml',
+    notify => Service['tomcat'],
+  }
+  file {"${content_dir}/thredds/time-aggregation.xml":
+    ensure => file,
+    source => 'puppet:///modules/thredds/time-aggregation.xml',
+    notify => Service['tomcat'],
+  }
 }
