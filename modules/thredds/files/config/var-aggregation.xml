@@ -18,8 +18,8 @@
     </metadata>
     <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
       <aggregation type="union">
-         <netcdf location="/g/data1/ua8/ARCCSS_Data/WRF_Sydney2k/HeatIndexVars_dailymax_WRFMK3_5_FutureOEHLu_2040-2049.nc" /> 
-         <netcdf location="/g/data1/ua8/ARCCSS_Data/WRF_Sydney2k/HeatIndexVars_dailymin_WRFMK3_5_FutureOEHLu_2040-2049.nc" /> 
+         <scan location="/g/data1/ua8/heatwave/" regExp="^MLaccessg20130106_.+\.nc$"
+               subdirs=false/> 
       </aggregation>
     </netcdf>
   </dataset>

@@ -18,9 +18,9 @@
      </metadata>
      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
      <aggregation dimName="time" type="joinExisting">
-         <scan location="/g/data1/ua8/ARCCSS_Data/WRF_Sydney2k/HeatIndexVars_dailymax_*"
+         <scan location="/g/data1/ua8/ARCCSS_Data/WRF_Sydney2k/"
                dateFormatMark="HeatIndexVars_dailymax_WRFMK3_5_FutureOEHLu_#yyyy" 
-               suffix=".nc" subdirs="false"/>
+               subdirs="false" regExp="^.+_dailymax_.+\.nc$"/>
        </aggregation>
      </netcdf>
   </dataset>   
