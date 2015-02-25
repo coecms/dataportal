@@ -11,7 +11,7 @@
     <service name="ncml" serviceType="NCML" base="/thredds/ncml/" />
     <service name="uddc" serviceType="UDDC" base="/thredds/uddc/" />
     <service name="iso" serviceType="ISO" base="/thredds/iso/" />
-    <!--service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/grid/" /-->
+    <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/grid/" />
   </service>
 
   <datasetRoot path="test" location="content/testdata/" />
@@ -48,5 +48,7 @@
 
 
   <catalogRef xlink:title="Test Enhanced Catalog" xlink:href="enhancedCatalog.xml" name=""/>
+  <catalogRef xlink:title="Example time aggregation" xlink:href="time-aggregation.xml" name=""/>
+  <catalogRef xlink:title="Example variables aggregation" xlink:href="var-aggregation.xml" name=""/>
 
 </catalog>
