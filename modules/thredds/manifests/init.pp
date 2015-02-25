@@ -40,29 +40,9 @@ class thredds {
     group  => 'tomcat',
   }
 
-  file {"${content_dir}/thredds/threddsConfig.xml":
-    ensure => file,
-    source => 'puppet:///modules/thredds/threddsConfig.xml',
-    notify => Service['tomcat'],
-  }
-  file {"${content_dir}/thredds/catalog.xml":
-    ensure => file,
-    source => 'puppet:///modules/thredds/catalog.xml',
-    notify => Service['tomcat'],
-  }
-  file {"${content_dir}/thredds/wmsConfig.xml":
-    ensure => file,
-    source => 'puppet:///modules/thredds/wmsConfig.xml',
-    notify => Service['tomcat'],
-  }
-  file {"${content_dir}/thredds/var-aggregation.xml":
-    ensure => file,
-    source => 'puppet:///modules/thredds/var-aggregation.xml',
-    notify => Service['tomcat'],
-  }
-  file {"${content_dir}/thredds/time-aggregation.xml":
-    ensure => file,
-    source => 'puppet:///modules/thredds/time-aggregation.xml',
-    notify => Service['tomcat'],
+  file {"${content_dir}/thredds/":
+    source  => 'puppet:///modules/thredds/config',
+    recurse => true,
+    notify  => Service['tomcat'],
   }
 }
