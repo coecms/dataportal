@@ -41,11 +41,20 @@
      </metadata>
      <filter>
         <include wildcard="*.nc" />
-        <include wildcard="*.grib1" />
-        <include wildcard="*.grib2" />
      </filter>
 </datasetScan>
 
+
+ <datasetScan name="ocean-data" ID="oceandata" path="Ocean_Data" location="/g/data1/v45/pas561/mom/core_nyf/gfdl_1080/">
+     <metadata inherited="true">
+        <serviceName>all</serviceName>
+        <authority>ARCCSS-ocean</authority>
+        <dataType>GRID</dataType>
+     </metadata>
+     <filter>
+        <include wildcard="*.nc" />
+     </filter>
+</datasetScan>
 
   <catalogRef xlink:title="Test Enhanced Catalog" xlink:href="enhancedCatalog.xml" name=""/>
   <catalogRef xlink:title="Example time aggregation" xlink:href="time-aggregation.xml" name=""/>
