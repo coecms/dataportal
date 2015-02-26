@@ -41,6 +41,7 @@
      </metadata>
      <filter>
         <include wildcard="*.nc" />
+        <exclude wildcard="restart*" atomic="false" collection="true"/>
      </filter>
 </datasetScan>
 
