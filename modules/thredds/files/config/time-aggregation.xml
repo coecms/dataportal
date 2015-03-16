@@ -11,7 +11,7 @@
     <service name="iso" serviceType="ISO" base="/thredds/iso/" />
     <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/grid/" />
   </service>
-  <dataset name="Example time aggregation" ID="Ex-time-aggregation" urlPath="ExampleAggr/ocean_month_aggr.nc">
+  <dataset name="ocean_month" ID="Ex-time-aggregation" urlPath="ExampleAggr/ocean_month_aggr.nc">
      <metadata inherited="true">
        <serviceName>all</serviceName>
        <dataType>Grid</dataType>         
@@ -23,7 +23,7 @@
        </aggregation>
      </netcdf>
   </dataset>   
-  <dataset name="Example time aggregation" ID="Ex-time-aggregation" urlPath="ExampleAggr/ocean_scalar_aggr.nc">
+  <dataset name="ocean_scalar" ID="Ex-time-aggregation" urlPath="ExampleAggr/ocean_scalar_aggr.nc">
      <metadata inherited="true">
        <serviceName>all</serviceName>
        <dataType>Grid</dataType>         
@@ -35,7 +35,7 @@
        </aggregation>
      </netcdf>
   </dataset>   
-  <dataset name="Example time aggregation" ID="Ex-time-aggregation" urlPath="ExampleAggr/ocean_day_aggr.nc">
+  <dataset name="ocean_daily" ID="Ex-time-aggregation" urlPath="ExampleAggr/ocean_day_aggr.nc">
      <metadata inherited="true">
        <serviceName>all</serviceName>
        <dataType>Grid</dataType>         
@@ -47,7 +47,7 @@
        </aggregation>
      </netcdf>
   </dataset>   
-  <dataset name="Example time aggregation" ID="Ex-time-aggregation" urlPath="ExampleAggr/ice_day_aggr.nc">
+  <dataset name="ice_daily" ID="Ex-time-aggregation" urlPath="ExampleAggr/ice_day_aggr.nc">
      <metadata inherited="true">
        <serviceName>all</serviceName>
        <dataType>Grid</dataType>         
@@ -59,7 +59,7 @@
        </aggregation>
      </netcdf>
   </dataset>   
-  <dataset name="Example time aggregation" ID="Ex-time-aggregation" urlPath="ExampleAggr/ice_month_aggr.nc">
+  <dataset name="ice_month" ID="Ex-time-aggregation" urlPath="ExampleAggr/ice_month_aggr.nc">
      <metadata inherited="true">
        <serviceName>all</serviceName>
        <dataType>Grid</dataType>         
