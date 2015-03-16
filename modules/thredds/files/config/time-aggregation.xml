@@ -11,7 +11,7 @@
     <service name="iso" serviceType="ISO" base="/thredds/iso/" />
     <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/grid/" />
   </service>
-  <dataset name="Example time aggregation" ID="Ex-time-aggregation" urlPath="ExampleAggr/ocean_aggr.nc">
+  <dataset name="Example time aggregation" ID="Ex-time-aggregation" urlPath="ExampleAggr/ocean_month_aggr.nc">
      <metadata inherited="true">
        <serviceName>all</serviceName>
        <dataType>Grid</dataType>         
@@ -20,6 +20,54 @@
      <aggregation dimName="time" type="joinExisting">
          <scan location="/g/data1/v45/mom01/"
                subdirs="true" regExp="^ocean\.nc$"/>
+       </aggregation>
+     </netcdf>
+  </dataset>   
+  <dataset name="Example time aggregation" ID="Ex-time-aggregation" urlPath="ExampleAggr/ocean_scalar_aggr.nc">
+     <metadata inherited="true">
+       <serviceName>all</serviceName>
+       <dataType>Grid</dataType>         
+     </metadata>
+     <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+     <aggregation dimName="time" type="joinExisting">
+         <scan location="/g/data1/v45/mom01/"
+               subdirs="true" regExp="^ocean_daily\.nc$"/>
+       </aggregation>
+     </netcdf>
+  </dataset>   
+  <dataset name="Example time aggregation" ID="Ex-time-aggregation" urlPath="ExampleAggr/ocean_day_aggr.nc">
+     <metadata inherited="true">
+       <serviceName>all</serviceName>
+       <dataType>Grid</dataType>         
+     </metadata>
+     <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+     <aggregation dimName="time" type="joinExisting">
+         <scan location="/g/data1/v45/mom01/"
+               subdirs="true" regExp="^ocean_daily\.nc$"/>
+       </aggregation>
+     </netcdf>
+  </dataset>   
+  <dataset name="Example time aggregation" ID="Ex-time-aggregation" urlPath="ExampleAggr/ice_day_aggr.nc">
+     <metadata inherited="true">
+       <serviceName>all</serviceName>
+       <dataType>Grid</dataType>         
+     </metadata>
+     <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+     <aggregation dimName="time" type="joinExisting">
+         <scan location="/g/data1/v45/mom01/"
+               subdirs="true" regExp="^ice_daily\.nc$"/>
+       </aggregation>
+     </netcdf>
+  </dataset>   
+  <dataset name="Example time aggregation" ID="Ex-time-aggregation" urlPath="ExampleAggr/ice_month_aggr.nc">
+     <metadata inherited="true">
+       <serviceName>all</serviceName>
+       <dataType>Grid</dataType>         
+     </metadata>
+     <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+     <aggregation dimName="time" type="joinExisting">
+         <scan location="/g/data1/v45/mom01/"
+               subdirs="true" regExp="^ice_month\.nc$"/>
        </aggregation>
      </netcdf>
   </dataset>   
