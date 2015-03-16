@@ -17,7 +17,7 @@
        <dataType>Grid</dataType>         
      </metadata>
      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
-     <aggregation dimName="Times" type="joinExisting">
+     <aggregation dimName="time" type="joinExisting">
          <scan location="/g/data1/v45/mom01/"
                subdirs="true" regExp="^ocean\.nc$"/>
        </aggregation>
